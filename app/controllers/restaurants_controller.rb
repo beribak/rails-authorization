@@ -1,30 +1,25 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: %i[ show edit update destroy ]
 
-  # GET /restaurants or /restaurants.json
+  # GET /restaurants
   def index
-    # authorize @restaurants
-    @restaurants = policy_scope(Restaurant)
+    #wdsadasdasdasda
   end
 
-  # GET /restaurants/1 or /restaurants/1.json
+  # GET /restaurants/1
   def show
-    authorize @restaurant 
   end
 
   # GET /restaurants/new
   def new
-    @restaurant = Restaurant.new
-    authorize @restaurant 
   end
   
   # GET /restaurants/1/edit
   def edit
-    authorize @restaurant 
     
   end
   
-  # POST /restaurants or /restaurants.json
+  # POST /restaurants
   def create
     @restaurant = Restaurant.new(restaurant_params)
     @restaurant.user = current_user
